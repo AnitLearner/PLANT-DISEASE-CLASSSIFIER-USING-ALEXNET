@@ -1,13 +1,33 @@
-# PLANT-DISEASE-CLASSSIFIER-USING-ALEXNET
-Uses the AlexNet Model for classification of plant diseases.
-A deep learning CNN model to predict diseases in plants using the famous AlexNet architecture
+# Real-Time-Traffic-Sign-Recognition-using-CNN
+German Traffic Sign Recognition with Low-Cost FPGA CNN Accelerator
+This project aims to implement a low-cost Convolutional Neural Network (CNN) accelerator on FPGA for real-time German traffic sign recognition. The model is trained using the German Traffic Sign Recognition Benchmark (GTSRB) dataset, which consists of 43 different classes of traffic signs.
 
-AlexNet. The architecture consists of eight layers: five convolutional layers and three fully-connected layers. But this isn’t what makes AlexNet special; these are some of the features used that are new approaches to convolutional neural networks:
+Getting Started
+These instructions will help you set up the environment to run the code on your local machine or in a cloud-based environment like Google Colab.
 
-ReLU Nonlinearity. AlexNet uses Rectified Linear Units (ReLU) instead of the tanh function, which was standard at the time. ReLU’s advantage is in training time; a CNN using ReLU was able to reach a 25% error on the CIFAR-10 dataset six times faster than a CNN using tanh.
+Prerequisites
+Make sure you have the following prerequisites installed:
 
-Multiple GPUs. Back in the day, GPUs were still rolling around with 3 gigabytes of memory (nowadays those kinds of memory would be rookie numbers). This was especially bad because the training set had 1.2 million images. AlexNet allows for multi-GPU training by putting half of the model’s neurons on one GPU and the other half on another GPU. Not only does this mean that a bigger model can be trained, but it also cuts down on the training time.
+Python 3.x
+TensorFlow
+NumPy
+Pandas
+OpenCV
+Matplotlib
 
-Overlapping Pooling. CNNs traditionally “pool” outputs of neighboring groups of neurons with no overlapping. However, when the authors introduced overlap, they saw a reduction in error by about 0.5% and found that models with overlapping pooling generally find it harder to overfit.
 
-AlexNet is an incredibly powerful model capable of achieving high accuracies on very challenging datasets. However, removing any of the convolutional layers will drastically degrade AlexNet’s performance. AlexNet is a leading architecture for any object-detection task and may have huge applications in the computer vision sector of artificial intelligence problems. In the future, AlexNet may be adopted more than CNNs for image tasks.
+Model Architecture
+The CNN model architecture used in this project is as follows:
+
+Convolutional Layer 1: 6 filters with a kernel size of 3x3 and ReLU activation.
+Depthwise Separable Convolution Layer 2: 2 filters with a kernel size of 3x3.
+Convolutional Layer 3: 2 filters with a kernel size of 3x3 and ReLU activation.
+Depthwise Separable Convolution Layer 4: 2 filters with a kernel size of 3x3.
+MaxPooling Layers (x2).
+Flatten Layer.
+Dense Output Layer with softmax activation.
+Results
+After training the model for 3 epochs, the test data accuracy achieved is approximately 82.44%.
+
+Acknowledgments
+The project is inspired by the research and datasets available on Kaggle. Special thanks to Meow Meow for providing the GTSRB dataset.
